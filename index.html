@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>test task</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+  <div id="app">
+    <div class="menu">
+      <img src="https://cdn-icons-png.flaticon.com/512/5448/5448104.png" class="menu__logo" />
+      <div class="menu__header-content">
+        <input type="text" placeholder="">
+        <div class="menu__submenu">
+          <ul class="submenu__list">
+            <li class="submenu__item"><a href="#">1st Menu</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-menu-item"><a href="#">Subitem 1</a></div>
+                <div class="dropdown-menu-item"><a href="#">Subitem 2</a></div>
+              </div>
+            </li>
+            <li class="submenu__item"><a href="#">2nd Menu</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-menu-item"><a href="#">Subitem 1</a></div>
+                <div class="dropdown-menu-item"><a href="#">Subitem 2</a></div>
+              </div></li>
+            <li class="submenu__item"><a href="#">3d Menu</a>
+              <div class="dropdown-menu">
+                <div class="dropdown-menu-item"><a href="#">Subitem 1</a></div>
+                <div class="dropdown-menu-item"><a href="#">Subitem 2</a></div>
+              </div></li>
+          </ul>
+        </div>
+      </div>
+      <img src="hamburger.png" class="submenu__ham" onclick="menuHandler()"/>
+    </div>
+     <div class="slider__container">
+      <div class=slider>
+        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo"/>
+        <img src="https://user72902.clients-cdnnow.ru/localStorage/news/a1/7f/4d/72/a17f4d72.jpg" class="slider__photo"/>
+        <img src="https://only-game.ru/wp-content/uploads/9/d/0/9d0f181ef92767f3d0cf4d93ea205935.jpeg" class="slider__photo"/>
+        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo"/>
+        <img src="https://user72902.clients-cdnnow.ru/localStorage/news/a1/7f/4d/72/a17f4d72.jpg" class="slider__photo"/>
+        <img src="https://only-game.ru/wp-content/uploads/9/d/0/9d0f181ef92767f3d0cf4d93ea205935.jpeg" class="slider__photo"/>
+        <div class="button">
+          <button class="button__prev">Назад</button>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="vue__block" id="vue__block">
+      <form class="sort">
+        <el-input placeholder="Веедите слова" v-model="input"></el-input>
+        <input type="text" placeholder="Веедите слова">
+        <input type="button" value="Отсортировать">
+      </form>
+    </div> -->
+  </div>
+  <script src="//unpkg.com/vue@2/dist/vue.js"></script>
+  <script src="//unpkg.com/element-ui@2.15.8/lib/index.js"></script>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="app.js"></script>
+</body>
+</html>
