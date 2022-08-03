@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -39,24 +38,35 @@
     </div>
      <div class="slider__container">
       <div class=slider>
-        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo"/>
+        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo active" />
         <img src="https://user72902.clients-cdnnow.ru/localStorage/news/a1/7f/4d/72/a17f4d72.jpg" class="slider__photo"/>
         <img src="https://only-game.ru/wp-content/uploads/9/d/0/9d0f181ef92767f3d0cf4d93ea205935.jpeg" class="slider__photo"/>
-        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo"/>
+        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo active" />
         <img src="https://user72902.clients-cdnnow.ru/localStorage/news/a1/7f/4d/72/a17f4d72.jpg" class="slider__photo"/>
         <img src="https://only-game.ru/wp-content/uploads/9/d/0/9d0f181ef92767f3d0cf4d93ea205935.jpeg" class="slider__photo"/>
         <div class="button">
-          <button class="button__prev">Назад</button>
+          <button class="button__prev" onClick="buttonHandler()">Назад</button>
         </div>
       </div>
     </div>
-    <!-- <div class="vue__block" id="vue__block">
+    <div class="vue__block" id="vue__block">
       <form class="sort">
         <el-input placeholder="Веедите слова" v-model="input"></el-input>
-        <input type="text" placeholder="Веедите слова">
+        <input type="text" placeholder="Веедите слова...">
         <input type="button" value="Отсортировать">
       </form>
-    </div> -->
+    </div>
+    <div class="footer">
+      <div class="footer__content">
+        <h1 class="footer__text">Text 1</h1>
+      </div>
+      <div class="footer__content">
+        <h1 class="footer__text">Text 2</h1>
+      </div>
+      <div class="footer__content">
+        <h1 class="footer__text">Text 3</h1>
+      </div>
+    </div>
   </div>
   <script src="//unpkg.com/vue@2/dist/vue.js"></script>
   <script src="//unpkg.com/element-ui@2.15.8/lib/index.js"></script>
