@@ -35,32 +35,111 @@
           </ul>
         </div>
       </div>
-      <img src="hamburger.png" class="submenu__ham" onclick="menuHandler()"/>
+      <img src="hamburger.png" class="submenu__ham"/>
     </div>
      <div class="slider__container">
       <div class=slider>
-        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo"/>
+        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo active" />
         <img src="https://user72902.clients-cdnnow.ru/localStorage/news/a1/7f/4d/72/a17f4d72.jpg" class="slider__photo"/>
         <img src="https://only-game.ru/wp-content/uploads/9/d/0/9d0f181ef92767f3d0cf4d93ea205935.jpeg" class="slider__photo"/>
-        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo"/>
+        <img src="https://masyamba.ru/мотоспорт/80-мотоспорт-фото.jpg" class="slider__photo active" />
         <img src="https://user72902.clients-cdnnow.ru/localStorage/news/a1/7f/4d/72/a17f4d72.jpg" class="slider__photo"/>
         <img src="https://only-game.ru/wp-content/uploads/9/d/0/9d0f181ef92767f3d0cf4d93ea205935.jpeg" class="slider__photo"/>
         <div class="button">
-          <button class="button__prev">Назад</button>
+          <button class="button__next" onclick="buttonHandler()">Next</button>
         </div>
       </div>
     </div>
-    <!-- <div class="vue__block" id="vue__block">
-      <form class="sort">
-        <el-input placeholder="Веедите слова" v-model="input"></el-input>
-        <input type="text" placeholder="Веедите слова">
-        <input type="button" value="Отсортировать">
-      </form>
-    </div> -->
+    <div class="vue__block" id="vue__block">
+      <div class="vue__block_sort">
+        <form class="form__sort">
+          <input 
+          type="text"
+          placeholder="Веедите слова..." 
+          v-bind:value="inputValue" 
+          v-on:input="inputHandler"
+          >
+          <input type="button" v-on:click="btnHandler" value='Отсортировать'>
+        </form>
+        <div class="sort__result">
+          <select id="select">
+            <option 
+            v-for="word in words" 
+            v-bind:value='word'>{{word}}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="vue__block_checkbox">
+        <form class="form__checkbox">
+          <input type="checkbox" name="numbers" id="number5">
+          <label for="number5">5</label>
+          <input type="checkbox" name="numbers" id="number8">
+          <label for="number8">8</label>
+          <input type="checkbox" name="numbers" id="number12">
+          <label for="number12">12</label>
+          <input type="checkbox" name="numbers" id="number15">
+          <label for="number15">15</label>
+          <input type="checkbox" name="numbers" id="number22">
+          <label for="number22">22</label>
+        </form>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer__content">
+        <h1 class="footer__text">Text 1</h1>
+      </div>
+      <div class="footer__content">
+        <h1 class="footer__text">Text 2</h1>
+      </div>
+      <div class="footer__content">
+        <h1 class="footer__text">Text 3</h1>
+      </div>
+    </div>
   </div>
-  <script src="//unpkg.com/vue@2/dist/vue.js"></script>
-  <script src="//unpkg.com/element-ui@2.15.8/lib/index.js"></script>
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="app.js"></script>
+  <script>
+  const ham = document.querySelector('.submenu__ham')
+  ham.addEventListener('click', () => {
+  const subMenu = document.querySelector('.menu__submenu');
+  const subList = document.querySelector('.submenu__list');
+  const dropItems = document.querySelectorAll('.dropdown-menu');
+  const subItems = document.querySelectorAll('.submenu__item');
+  dropItems.forEach((dropItem) => {
+    dropItem.classList.toggle('overlay__dropdown')
+  })
+  subItems.forEach((subItem) => {
+    subItem.classList.toggle('overlay__item');
+  })
+  subList.classList.toggle('overlay__list');
+  subMenu.classList.toggle('overlay__menu');
+})
+// слайдер картинок
+const images = document.querySelectorAll('.slider__photo');
+  let i = 0;
+function buttonHandler() {
+  const btn = document.querySelector('.button__prev');
+  images.forEach((image) => {
+    image.classList.remove('active')
+  })
+  images[i].classList.add('active')
+  if(i === images.length -1) {
+    i = 0
+  }
+  i++;
+}
+window.setInterval(() => {
+  images.forEach((image) => {
+    image.classList.remove('active')
+  })
+  images[i].classList.add('active')
+  if(i === images.length -1) {
+    i = 0
+  }
+  i++;
+},3000)
+  </script>
 </body>
 </html>

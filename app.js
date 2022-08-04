@@ -1,33 +1,23 @@
-// const App = {
-//   data() {
-//     return {
-//       input: '123'
-//     }
-//   }
-// }
-// var Ctor = Vue.createApp(App).mount('#vue__block')
-var Main = {
+const App = {
   data() {
     return {
-      input: ''
+      input: '',
+      inputValue: '',
+      words: null,
+    }
+    
+  },
+  methods: {
+    inputHandler(event) {
+      this.inputValue = event.target.value
+      this.words = this.inputValue.trim().split(' ').sort()
+    },
+    btnHandler() {
+      console.log(this.words)
     }
   }
 }
-var Ctor = Vue.extend(Main)
-new Ctor().$mount('#app')
 
-// описываем функцию хендлер для переключения оверлея при клике на бургер
-function menuHandler() {
-  const subMenu = document.querySelector('.menu__submenu');
-  const subList = document.querySelector('.submenu__list');
-  const dropItems = document.querySelectorAll('.dropdown-menu-item');
-  const subItems = document.querySelectorAll('.submenu__item');
-  dropItems.forEach((dropItem) => {
-    dropItem.classList.toggle('overlay__dropdown')
-  })
-  subItems.forEach((subItem) => {
-    subItem.classList.toggle('overlay__item');
-  })
-  subList.classList.toggle('overlay__list');
-  subMenu.classList.toggle('overlay__menu');
-};
+
+Vue.createApp(App).mount('#app')
+
