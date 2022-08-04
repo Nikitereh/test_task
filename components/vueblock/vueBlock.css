@@ -1,0 +1,25 @@
+/* вью блок */
+.vue__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+  background-color: rgb(146, 187, 235);
+}
+.vue__block_sort {
+  margin-top: 20px;
+  height: 75%;
+}
+.form__sort input, select, option {
+  font-size:20px
+}
+.form__checkbox label {
+  padding-right: 10px
+}
+.checkbox__result {
+  margin-top:7px;
+}
+.form__checkbox label {
+  margin-left:2px;
+}

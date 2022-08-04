@@ -1,0 +1,110 @@
+.menu {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: rgb(235, 235, 123);
+  align-items: start;
+}
+.menu__logo {
+  width: 90px;
+  margin: 2%;
+}
+.menu__submenu {
+  margin-right: 2.5%;
+}
+.menu__header-content {
+  width: 100%;
+}
+.menu__header-content input {
+  width: 97%;
+  margin: 8px 2% 5px 5px;
+}
+.submenu__ham {
+  width: 50px;
+  margin-right: 2px;
+  display: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+.submenu__list {
+  display: flex;
+  justify-content: space-between;
+}
+.submenu__list li {
+  list-style: none;
+}
+.submenu__list li a {
+  text-decoration: none;
+}
+.submenu__item li {
+  position: relative;
+}
+.submenu__item:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+}
+.dropdown-menu-item a{
+  font-size: 18px;
+}
+
+
+/* мобильное представление */
+@media screen and (max-width:650px) {
+  .menu {
+    align-items: center;
+  }
+  .submenu__ham {
+    display: block;
+  }
+  .menu__submenu {
+    display: none;
+  }
+  .menu__logo {
+    width: 60px;
+  }
+  .menu__header-content input {
+    height: 32px;
+  }
+}
+
+/* задаем стили для меню оверлея при мобильном отображении */
+.overlay__menu {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 50% 10px 0 10px;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(235, 235, 123);
+  justify-content: center;
+  z-index:900;
+}
+
+/* задаем стили меню в оверлее */
+.overlay__list {
+  display: block;
+  position:absolute;
+  top:0;
+  left:30px;
+  padding-top:40px;
+  height:100vh
+}
+
+/* задаем стили для пунктов в оверлее */
+.overlay__item {
+  margin-bottom: 120px;
+  justify-content: center;
+}
+
+/* задаем стили для подпунктов в оврелее */
+.overlay__dropdown {
+  margin-top: 3px;
+  margin-left: 10px;
+  display:block;
+}

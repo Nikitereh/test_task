@@ -1,0 +1,18 @@
+.footer {
+  width:100%;
+  background-color: grey;
+  height:100px;
+  display:flex;
+  justify-content:space-between;
+  
+}
+.footer__content {
+  margin: 10px 20px 10px 0;
+}
+@media screen and (max-width:450px) {
+  .footer {
+    flex-direction: column;
+    height:100%;
+    align-items:center;
+  }
+}

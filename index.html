@@ -4,13 +4,17 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>test task</title>
-<link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="/components/header/header.css">
+<link rel="stylesheet" href="components/slider/slider.css">
+<link rel="stylesheet" href="components/vueblock/vueBlock.css">
+<link rel="stylesheet" href="/components/footer/footer.css">
 </head>
 <body>
   <div id="app">
     <div class="menu">
-      <img src="https://cdn-icons-png.flaticon.com/512/5448/5448104.png" class="menu__logo" />
+      <img src="images/logo.png" class="menu__logo" />
       <div class="menu__header-content">
         <input type="text" placeholder="">
         <div class="menu__submenu">
@@ -34,7 +38,7 @@
           </ul>
         </div>
       </div>
-      <img src="hamburger.png" class="submenu__ham"/>
+      <img src="images/hamburger.png" class="submenu__ham"/>
     </div>
      <div class="slider__container">
       <div class=slider>
@@ -58,7 +62,8 @@
           v-bind:value="inputValue" 
           v-on:input="inputHandler"
           >
-          <input type="button" v-on:click="btnHandler" value='Отсортировать'>
+          <input type="button" v-on:click="sortHandler" value='Отсортировать'>
+          
         </form>
         
         <div class="sort__result" v-if="seen">
@@ -99,7 +104,8 @@
     </div>
   </div>
   <script src="https://unpkg.com/vue@next"></script>
-  <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-  <script src="app.js"></script>
+  <script src="/components/header/header.js"></script>
+  <script src="/components/vueblock/vueBlock.js"></script>
+  <script src="/components/slider/slider.js"></script>
 </body>
 </html>
