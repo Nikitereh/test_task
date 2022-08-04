@@ -206,9 +206,17 @@ html {
   margin-top: 20px;
   height: 75%;
 }
-
-.vue__block_checkbox {
-
+.form__sort input, select, option {
+  font-size:20px
+}
+.form__checkbox label {
+  padding-right: 10px
+}
+.checkbox__result {
+  margin-top:7px;
+}
+.form__checkbox label {
+  margin-left:2px;
 }
 
 
@@ -222,6 +230,26 @@ html {
 }
 .footer__content {
   margin: 10px 20px 10px 20px;
+}
+@media screen and (max-width:450px) {
+  .footer {
+    flex-direction: column;
+    height:100%;
+    align-items:center;
+  }
+}
+
+/* футер */
+.footer {
+  width:100%;
+  background-color: grey;
+  height:100px;
+  display:flex;
+  justify-content:space-between;
+  
+}
+.footer__content {
+  margin: 10px 20px 10px 0;
 }
 @media screen and (max-width:450px) {
   .footer {

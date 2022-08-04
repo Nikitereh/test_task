@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -55,13 +54,14 @@
         <form class="form__sort">
           <input 
           type="text"
-          placeholder="Веедите слова..." 
+          v-bind:placeholder="placeHolder" 
           v-bind:value="inputValue" 
           v-on:input="inputHandler"
           >
           <input type="button" v-on:click="btnHandler" value='Отсортировать'>
         </form>
-        <div class="sort__result">
+        
+        <div class="sort__result" v-if="seen">
           <select id="select">
             <option 
             v-for="word in words" 
@@ -72,17 +72,18 @@
       </div>
       <div class="vue__block_checkbox">
         <form class="form__checkbox">
-          <input type="checkbox" name="numbers" id="number5">
-          <label for="number5">5</label>
-          <input type="checkbox" name="numbers" id="number8">
-          <label for="number8">8</label>
-          <input type="checkbox" name="numbers" id="number12">
-          <label for="number12">12</label>
-          <input type="checkbox" name="numbers" id="number15">
-          <label for="number15">15</label>
-          <input type="checkbox" name="numbers" id="number22">
-          <label for="number22">22</label>
+          <input type="checkbox" id="number5" value=5 v-model.number="checkedNumbers">
+<label for="number5">5</label>
+<input type="checkbox" id="number8" value=8 v-model.number="checkedNumbers">
+<label for="number8">8</label>
+          <input type="checkbox" id="number12" value=12 v-model.number="checkedNumbers">
+<label for="number12">12</label>
+          <input type="checkbox" id="number15" value=15 v-model.number="checkedNumbers">
+<label for="number15">15</label>
+          <input type="checkbox" id="number22" value=22 v-model.number="checkedNumbers">
+<label for="number22">22</label>
         </form>
+        <h1 class="checkbox__result">Результат:{{resultHandler()}}</h1>
       </div>
     </div>
     <div class="footer">
@@ -100,46 +101,5 @@
   <script src="https://unpkg.com/vue@next"></script>
   <script src="https://unpkg.com/element-ui/lib/index.js"></script>
   <script src="app.js"></script>
-  <script>
-  const ham = document.querySelector('.submenu__ham')
-  ham.addEventListener('click', () => {
-  const subMenu = document.querySelector('.menu__submenu');
-  const subList = document.querySelector('.submenu__list');
-  const dropItems = document.querySelectorAll('.dropdown-menu');
-  const subItems = document.querySelectorAll('.submenu__item');
-  dropItems.forEach((dropItem) => {
-    dropItem.classList.toggle('overlay__dropdown')
-  })
-  subItems.forEach((subItem) => {
-    subItem.classList.toggle('overlay__item');
-  })
-  subList.classList.toggle('overlay__list');
-  subMenu.classList.toggle('overlay__menu');
-})
-// слайдер картинок
-const images = document.querySelectorAll('.slider__photo');
-  let i = 0;
-function buttonHandler() {
-  const btn = document.querySelector('.button__prev');
-  images.forEach((image) => {
-    image.classList.remove('active')
-  })
-  images[i].classList.add('active')
-  if(i === images.length -1) {
-    i = 0
-  }
-  i++;
-}
-window.setInterval(() => {
-  images.forEach((image) => {
-    image.classList.remove('active')
-  })
-  images[i].classList.add('active')
-  if(i === images.length -1) {
-    i = 0
-  }
-  i++;
-},3000)
-  </script>
 </body>
 </html>
