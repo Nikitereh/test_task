@@ -23,3 +23,13 @@
 .form__checkbox label {
   margin-left:2px;
 }
+
+
+@media screen and (max-width:450px) {
+  .form__sort {
+    margin-left: 20px;
+  }
+  .sort__result {
+    margin-left: 20px;
+  }
+}
