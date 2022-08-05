@@ -24,11 +24,3 @@
     align-items:center;
   }
 }
-
-@media screen and (max-width:950px) {
-  .footer {
-    flex-direction: column;
-    height:27%;
-    align-items:center;
-  }
-}
